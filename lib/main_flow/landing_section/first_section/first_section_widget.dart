@@ -1,6 +1,6 @@
-import '/components/card51_review_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/main_flow/arguments_displayer/arguments_displayer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'first_section_model.dart';
@@ -275,9 +275,9 @@ class _FirstSectionWidgetState extends State<FirstSectionWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 64.0),
                             child: wrapWithModel(
-                              model: _model.card51ReviewModel,
+                              model: _model.argumentsDisplayerModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: Card51ReviewWidget(),
+                              child: ArgumentsDisplayerWidget(),
                             ),
                           ),
                         ),

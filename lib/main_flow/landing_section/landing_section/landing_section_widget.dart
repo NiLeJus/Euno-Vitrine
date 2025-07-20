@@ -167,38 +167,27 @@ class _LandingSectionWidgetState extends State<LandingSectionWidget>
                               32.0, 0.0, 32.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 1.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Flexible(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(1.0, 0.0),
-                                          child: Container(
-                                            decoration: BoxDecoration(),
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  1.0, 1.0),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/euno_principal.png',
-                                                  width: 193.2,
-                                                  height: 50.0,
-                                                  fit: BoxFit.fitHeight,
-                                                  alignment:
-                                                      Alignment(1.0, 0.0),
-                                                ),
-                                              ),
-                                            ),
+                                      Container(
+                                        decoration: BoxDecoration(),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.asset(
+                                            'assets/images/euno_principal.png',
+                                            width: 193.2,
+                                            height: 50.0,
+                                            fit: BoxFit.fitHeight,
+                                            alignment: Alignment(1.0, 0.0),
                                           ),
                                         ),
                                       ),
@@ -209,118 +198,97 @@ class _LandingSectionWidgetState extends State<LandingSectionWidget>
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Flexible(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: RichText(
-                                        textScaler:
-                                            MediaQuery.of(context).textScaler,
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text:
-                                                  ' Un compagnon fictif pour les ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLarge
-                                                      .override(
-                                                        font: GoogleFonts
-                                                            .robotoCondensed(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .fontStyle,
-                                                        ),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .fontStyle,
-                                                      ),
-                                            ),
-                                            TextSpan(
-                                              text: '\nGRANDES ',
-                                              style: GoogleFonts.gochiHand(
-                                                color: Color(0xFFFFD032),
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 54.0,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: 'aventures de la vie',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLarge
-                                                      .override(
-                                                        font: GoogleFonts
-                                                            .robotoCondensed(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .fontStyle,
-                                                        ),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .fontStyle,
-                                                      ),
-                                            )
-                                          ],
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font:
-                                                    GoogleFonts.robotoCondensed(
+                                  Align(
+                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    child: RichText(
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text:
+                                                ' Un compagnon fictif pour les ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineLarge
+                                                .override(
+                                                  font: GoogleFonts
+                                                      .robotoCondensed(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
+                                                  letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .headlineLarge
                                                           .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .headlineLarge
                                                           .fontStyle,
                                                 ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
+                                          ),
+                                          TextSpan(
+                                            text: '\nGRANDES ',
+                                            style: GoogleFonts.gochiHand(
+                                              color: Color(0xFFFFD032),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 54.0,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: 'aventures de la vie',
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineLarge
+                                                .override(
+                                                  font: GoogleFonts
+                                                      .robotoCondensed(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineLarge
+                                                          .fontStyle,
+                                                ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.robotoCondensed(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -330,33 +298,63 @@ class _LandingSectionWidgetState extends State<LandingSectionWidget>
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                        ),
-                                        textAlign: TextAlign.end,
-                                      ).animateOnPageLoad(animationsMap[
-                                          'richTextOnPageLoadAnimation']!),
-                                    ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                      textAlign: TextAlign.end,
+                                    ).animateOnPageLoad(animationsMap[
+                                        'richTextOnPageLoadAnimation']!),
                                   ),
                                 ],
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Flexible(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: Container(
-                                        constraints: BoxConstraints(
-                                          maxWidth: 450.0,
-                                        ),
-                                        decoration: BoxDecoration(),
-                                        child: Text(
-                                          'Euno est un robot fictif compagnon intelligent, bienveillant et évolutif, conçu pour accompagner votre enfant de la naissance jusqu’à l’adolescence.\n\nIl veille, rassure, joue, apprend, écoute… Il grandit avec lui.',
-                                          textAlign: TextAlign.end,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                font: GoogleFonts.notoSans(
+                              Align(
+                                alignment: AlignmentDirectional(1.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(1.0, 0.0),
+                                        child: Container(
+                                          constraints: BoxConstraints(
+                                            maxWidth: 450.0,
+                                          ),
+                                          decoration: BoxDecoration(),
+                                          child: Text(
+                                            'Euno est un robot fictif compagnon intelligent, bienveillant et évolutif, conçu pour accompagner votre enfant de la naissance jusqu’à l’adolescence.\n\nIl veille, rassure, joue, apprend, écoute… Il grandit avec lui.',
+                                            textAlign: TextAlign.end,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  font: GoogleFonts.notoSans(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -368,27 +366,15 @@ class _LandingSectionWidgetState extends State<LandingSectionWidget>
                                                           .labelLarge
                                                           .fontStyle,
                                                 ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation']!),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'textOnPageLoadAnimation']!),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                              Flexible(
+                              Expanded(
                                 child: Align(
                                   alignment: AlignmentDirectional(1.0, 1.0),
                                   child: Padding(
@@ -456,7 +442,7 @@ class _LandingSectionWidgetState extends State<LandingSectionWidget>
                             borderRadius: BorderRadius.circular(0.0),
                             child: Image.asset(
                               'assets/images/x05_--_16_18_53.png',
-                              height: double.infinity,
+                              height: 900.0,
                               fit: BoxFit.cover,
                             ),
                           ).animateOnPageLoad(

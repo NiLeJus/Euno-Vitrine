@@ -1,4 +1,4 @@
 // Export pages
-export '/dialogs/flows/main_flow/home_page/home_page_widget.dart'
-    show HomePageWidget;
+export '/main_flow/home_page/home_page_widget.dart' show HomePageWidget;
 export '/confirmation/confirmation_widget.dart' show ConfirmationWidget;
+export '/landing_page/landing_page_widget.dart' show LandingPageWidget;

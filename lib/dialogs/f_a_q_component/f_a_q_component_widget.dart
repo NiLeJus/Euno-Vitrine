@@ -1,3 +1,4 @@
+import '/dialogs/contact_form_modal/contact_form_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -49,6 +50,7 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
       padding: EdgeInsets.all(16.0),
       child: Container(
         width: 421.9,
+        height: 645.0,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -69,10 +71,11 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -109,7 +112,7 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
                     ],
                   ),
                   Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -197,7 +200,7 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
                     ],
                   ),
                   Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -285,7 +288,7 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
                     ],
                   ),
                   Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -372,7 +375,7 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Divider(
@@ -395,8 +398,21 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(4.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  Navigator.pop(context);
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Color(0x00FFFFFF),
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: ContactFormModalWidget(),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 },
                                 text: 'Nous contacter',
                                 options: FFButtonOptions(
@@ -450,19 +466,22 @@ class _FAQComponentWidgetState extends State<FAQComponentWidget> {
             ),
             Align(
               alignment: AlignmentDirectional(1.0, -1.0),
-              child: Padding(
-                padding: EdgeInsets.all(6.0),
-                child: FlutterFlowIconButton(
-                  borderRadius: 8.0,
-                  buttonSize: 40.0,
-                  icon: Icon(
-                    Icons.cancel_sharp,
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 28.0,
+              child: Container(
+                decoration: BoxDecoration(),
+                child: Padding(
+                  padding: EdgeInsets.all(6.0),
+                  child: FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 55.0,
+                    icon: Icon(
+                      Icons.cancel_sharp,
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      size: 28.0,
+                    ),
+                    onPressed: () async {
+                      Navigator.pop(context);
+                    },
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
                 ),
               ),
             ),

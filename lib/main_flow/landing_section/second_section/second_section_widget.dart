@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,48 +39,48 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-      ),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(0.0),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 8.0,
-                sigmaY: 8.0,
-              ),
-              child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 132.71,
-                  decoration: BoxDecoration(),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.asset(
-                      'assets/images/6764547_3438183_1.png',
-                      width: double.infinity,
-                      fit: BoxFit.fitWidth,
-                    ),
+    return Align(
+      alignment: AlignmentDirectional(0.0, -1.0),
+      child: Container(
+        height: 640.0,
+        child: Stack(
+          alignment: AlignmentDirectional(0.0, -1.0),
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, -1.0),
+              child: Container(
+                width: double.infinity,
+                height: 132.7,
+                decoration: BoxDecoration(),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/6764547_3438183_1.png',
+                    width: double.infinity,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 64.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Ce que Euno apporte à votre enfant',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        font: GoogleFonts.robotoCondensed(
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 64.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Ce que Euno apporte à votre enfant',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          font: GoogleFonts.robotoCondensed(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .fontStyle,
+                          ),
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .fontWeight,
@@ -89,21 +88,12 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                               .headlineMedium
                               .fontStyle,
                         ),
-                        color: FlutterFlowTheme.of(context).tertiary,
-                        letterSpacing: 0.0,
-                        fontWeight: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .fontWeight,
-                        fontStyle: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .fontStyle,
-                      ),
-                ),
-                Flexible(
-                  child: Padding(
+                  ),
+                  Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(128.0, 0.0, 128.0, 0.0),
                     child: MasonryGridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       gridDelegate:
                           SliverSimpleGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
@@ -114,37 +104,21 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return [
-                          () => Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 32.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Text(
-                                          ' Une IA émotionnelle qui s’adapte',
-                                          style: FlutterFlowTheme.of(context)
-                                              .headlineSmall
-                                              .override(
-                                                font:
-                                                    GoogleFonts.robotoCondensed(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
+                          () => Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 32.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Text(
+                                        ' Une IA émotionnelle qui s’adapte',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.robotoCondensed(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -154,38 +128,32 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                                                         .headlineSmall
                                                         .fontStyle,
                                               ),
-                                        ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
                                       ),
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, -1.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 16.0),
-                                          child: Text(
-                                            'Un compagnon affectif, pas un assistant impersonnel.',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  font: GoogleFonts
-                                                      .robotoCondensed(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .tertiary,
-                                                  letterSpacing: 0.0,
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(0.0, -1.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: Text(
+                                          'Un compagnon affectif, pas un assistant impersonnel.',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                font:
+                                                    GoogleFonts.robotoCondensed(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -197,29 +165,29 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                                                           .titleMedium
                                                           .fontStyle,
                                                 ),
-                                          ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
                                       ),
-                                      Text(
-                                        'Euno ne se contente pas de parler : il écoute, réagit et crée une relation. Grâce à ses capteurs et à sa capacité à reconnaître les émotions, il :\n\nAdapte son ton et ses réponses,\nFait preuve d’humour ou de tendresse,\nInvite au dialogue ou au câlin selon les moments.\n\nIl devient un véritable confident, qui contribue au développement affectif de l’enfant.',
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                          font: GoogleFonts.notoSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
+                                    ),
+                                    Text(
+                                      'Euno ne se contente pas de parler : il écoute, réagit et crée une relation. Grâce à ses capteurs et à sa capacité à reconnaître les émotions, il :\n\nAdapte son ton et ses réponses,\nFait preuve d’humour ou de tendresse,\nInvite au dialogue ou au câlin selon les moments.\n\nIl devient un véritable confident, qui contribue au développement affectif de l’enfant.',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                        font: GoogleFonts.notoSans(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyLarge
@@ -228,26 +196,34 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .bodyLarge
                                                   .fontStyle,
-                                          shadows: [
-                                            Shadow(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              offset: Offset(0.0, 0.0),
-                                              blurRadius: 8.0,
-                                            ),
-                                            Shadow(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              offset: Offset(0.0, 0.0),
-                                              blurRadius: 4.0,
-                                            )
-                                          ],
                                         ),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                        shadows: [
+                                          Shadow(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            offset: Offset(0.0, 0.0),
+                                            blurRadius: 8.0,
+                                          ),
+                                          Shadow(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            offset: Offset(0.0, 0.0),
+                                            blurRadius: 4.0,
+                                          )
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                           () => Padding(
@@ -376,7 +352,7 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 32.0, 0.0),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
@@ -498,11 +474,11 @@ class _SecondSectionWidgetState extends State<SecondSectionWidget> {
                       },
                     ),
                   ),
-                ),
-              ].divide(SizedBox(height: 64.0)),
+                ].divide(SizedBox(height: 64.0)),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

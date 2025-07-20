@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'card51_review_widget.dart' show Card51ReviewWidget;
+import 'top_bar_component_widget.dart' show TopBarComponentWidget;
 import 'package:flutter/material.dart';
 
-class Card51ReviewModel extends FlutterFlowModel<Card51ReviewWidget> {
+class TopBarComponentModel extends FlutterFlowModel<TopBarComponentWidget> {
   @override
   void initState(BuildContext context) {}
 

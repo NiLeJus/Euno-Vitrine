@@ -1,4 +1,4 @@
-import '/components/argument_tab_component_widget.dart';
+import '/components/argument_tab_component/argument_tab_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'third_section_widget.dart' show ThirdSectionWidget;

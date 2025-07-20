@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -33,12 +34,44 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => HomePageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.showSplashImage
+          ? Builder(
+              builder: (context) => isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/android-chrome-192x192.png',
+                          width: 80.0,
+                          height: 80.0,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+            )
+          : LandingPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomePageWidget(),
+          builder: (context, _) => appStateNotifier.showSplashImage
+              ? Builder(
+                  builder: (context) => isWeb
+                      ? Container()
+                      : Container(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          child: Center(
+                            child: Image.asset(
+                              'assets/images/android-chrome-192x192.png',
+                              width: 80.0,
+                              height: 80.0,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                )
+              : LandingPageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -49,6 +82,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ConfirmationWidget.routeName,
           path: ConfirmationWidget.routePath,
           builder: (context, params) => ConfirmationWidget(),
+        ),
+        FFRoute(
+          name: LandingPageWidget.routeName,
+          path: LandingPageWidget.routePath,
+          builder: (context, params) => LandingPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

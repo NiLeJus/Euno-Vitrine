@@ -57,6 +57,9 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
     return Padding(
       padding: EdgeInsets.all(16.0),
       child: Container(
+        constraints: BoxConstraints(
+          maxWidth: 700.0,
+        ),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -175,12 +178,10 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                                 _model.passwordTextController1,
                                             focusNode:
                                                 _model.passwordFocusNode1,
-                                            autofocus: true,
-                                            autofillHints: [
-                                              AutofillHints.password
-                                            ],
+                                            autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
+                                              isDense: true,
                                               labelText: 'Prénom',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
@@ -198,6 +199,7 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                                               .labelLarge
                                                               .fontStyle,
                                                     ),
+                                                    fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
@@ -300,11 +302,10 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                             focusNode:
                                                 _model.passwordFocusNode2,
                                             autofocus: true,
-                                            autofillHints: [
-                                              AutofillHints.password
-                                            ],
+                                            autofillHints: [AutofillHints.name],
                                             obscureText: false,
                                             decoration: InputDecoration(
+                                              isDense: true,
                                               labelText: 'Nom',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
@@ -425,10 +426,11 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                               child: TextFormField(
                                 controller: _model.passwordTextController3,
                                 focusNode: _model.passwordFocusNode3,
-                                autofocus: true,
+                                autofocus: false,
                                 autofillHints: [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
+                                  isDense: true,
                                   labelText: 'Email',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -510,71 +512,6 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 24.0),
-                            child: Container(
-                              width: double.infinity,
-                              child: Stack(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 12.0),
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: 2.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Container(
-                                      width: 180.0,
-                                      height: 32.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                      ),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Text(
-                                        'Votre Message',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              font: GoogleFonts.notoSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
                           Container(
                             width: double.infinity,
                             decoration: BoxDecoration(),
@@ -648,6 +585,7 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
+                                  isDense: true,
                                   labelText: 'Message',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -731,52 +669,95 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Theme(
-                                data: ThemeData(
-                                  checkboxTheme: CheckboxThemeData(
-                                    visualDensity: VisualDensity.compact,
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                    ),
-                                  ),
-                                  unselectedWidgetColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                ),
-                                child: Checkbox(
-                                  value: _model.checkboxValue ??= true,
-                                  onChanged: (newValue) async {
-                                    safeSetState(
-                                        () => _model.checkboxValue = newValue!);
-                                  },
-                                  side: (FlutterFlowTheme.of(context)
-                                              .alternate !=
-                                          null)
-                                      ? BorderSide(
-                                          width: 2,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 24.0),
+                            child: Container(
+                              width: double.infinity,
+                              child: Stack(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 12.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 2.0,
+                                        decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                        )
-                                      : null,
-                                  activeColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                  checkColor: FlutterFlowTheme.of(context).info,
-                                ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Flexible(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 12.0, 0.0, 12.0),
-                                  child: Text(
-                                    'En cochant cette case, j’accepte que mes données soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.notoSans(
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 24.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Theme(
+                                  data: ThemeData(
+                                    checkboxTheme: CheckboxThemeData(
+                                      visualDensity: VisualDensity.compact,
+                                      materialTapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                    ),
+                                    unselectedWidgetColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                  ),
+                                  child: Checkbox(
+                                    value: _model.checkboxValue ??= true,
+                                    onChanged: (newValue) async {
+                                      safeSetState(() =>
+                                          _model.checkboxValue = newValue!);
+                                    },
+                                    side: (FlutterFlowTheme.of(context)
+                                                .alternate !=
+                                            null)
+                                        ? BorderSide(
+                                            width: 2,
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                          )
+                                        : null,
+                                    activeColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    checkColor:
+                                        FlutterFlowTheme.of(context).info,
+                                  ),
+                                ),
+                                Flexible(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'En cochant cette case, j’accepte que mes données soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSans(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -786,20 +767,11 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -821,8 +793,25 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                                   child: Padding(
                                     padding: EdgeInsets.all(4.0),
                                     child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
+                                      onPressed: () async {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Demande envoyée !',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor: Color(0xFF83FFA8),
+                                          ),
+                                        );
+                                        Navigator.pop(context);
+                                        Navigator.pop(context);
                                       },
                                       text: 'Nous contacter',
                                       options: FFButtonOptions(
@@ -878,7 +867,7 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
+                                0.0, 24.0, 0.0, 0.0),
                             child: Text(
                               'Ce formulaire ne vous engage pas à un achat. Vous serez simplement prévenu·e en priorité lors de l’ouverture officielle des précommandes. Vous pouvez à tout moment annuler votre précommande sans frais, tant qu’aucune confirmation de commande officielle n’a été envoyée. Projet fictif réalisé dans le cadre de l’ECF CDUI.',
                               style: FlutterFlowTheme.of(context)
@@ -915,89 +904,6 @@ class _ContactFormModalWidgetState extends State<ContactFormModalWidget> {
                   ),
                   decoration: BoxDecoration(),
                 ),
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Divider(
-                    thickness: 1.0,
-                    color: Color(0xFFE0E3E7),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 8.0),
-                    child: Text(
-                      'Coordonnées',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).labelMedium.override(
-                            font: GoogleFonts.plusJakartaSans(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .fontStyle,
-                          ),
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Mundaï\nStartup en cours de création spécialisée dans la robotique affective et le bien-être familial\n\n📍 Siège social fictif : 12 rue des Étoiles, 75011 Paris\n 📧 Email : contact@mundai.io',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
-                    child: Container(
-                      constraints: BoxConstraints(
-                        maxWidth: 350.0,
-                      ),
-                      decoration: BoxDecoration(),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
