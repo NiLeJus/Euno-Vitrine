@@ -29,11 +29,6 @@ class PreOrderContentComponentModel
   TextEditingController? passwordConfirmTextController2;
   String? Function(BuildContext, String?)?
       passwordConfirmTextController2Validator;
-  // State field(s) for passwordConfirm widget.
-  FocusNode? passwordConfirmFocusNode3;
-  TextEditingController? passwordConfirmTextController3;
-  String? Function(BuildContext, String?)?
-      passwordConfirmTextController3Validator;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
@@ -56,8 +51,5 @@ class PreOrderContentComponentModel
 
     passwordConfirmFocusNode2?.dispose();
     passwordConfirmTextController2?.dispose();
-
-    passwordConfirmFocusNode3?.dispose();
-    passwordConfirmTextController3?.dispose();
   }
 }

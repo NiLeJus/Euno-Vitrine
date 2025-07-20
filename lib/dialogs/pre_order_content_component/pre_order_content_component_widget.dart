@@ -53,9 +53,6 @@ class _PreOrderContentComponentWidgetState
     _model.passwordConfirmTextController2 ??= TextEditingController();
     _model.passwordConfirmFocusNode2 ??= FocusNode();
 
-    _model.passwordConfirmTextController3 ??= TextEditingController();
-    _model.passwordConfirmFocusNode3 ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -186,12 +183,13 @@ class _PreOrderContentComponentWidgetState
                                                     .passwordTextController1,
                                                 focusNode:
                                                     _model.passwordFocusNode1,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 autofillHints: [
                                                   AutofillHints.password
                                                 ],
                                                 obscureText: false,
                                                 decoration: InputDecoration(
+                                                  isDense: true,
                                                   labelText: 'Prénom',
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -326,12 +324,13 @@ class _PreOrderContentComponentWidgetState
                                                     .passwordTextController2,
                                                 focusNode:
                                                     _model.passwordFocusNode2,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 autofillHints: [
                                                   AutofillHints.password
                                                 ],
                                                 obscureText: false,
                                                 decoration: InputDecoration(
+                                                  isDense: true,
                                                   labelText: 'Nom',
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -467,10 +466,11 @@ class _PreOrderContentComponentWidgetState
                                   child: TextFormField(
                                     controller: _model.passwordTextController3,
                                     focusNode: _model.passwordFocusNode3,
-                                    autofocus: true,
-                                    autofillHints: [AutofillHints.password],
+                                    autofocus: false,
+                                    autofillHints: [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
+                                      isDense: true,
                                       labelText: 'Email',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -590,11 +590,9 @@ class _PreOrderContentComponentWidgetState
                                                 focusNode: _model
                                                     .passwordConfirmFocusNode1,
                                                 autofocus: false,
-                                                autofillHints: [
-                                                  AutofillHints.password
-                                                ],
                                                 obscureText: false,
                                                 decoration: InputDecoration(
+                                                  isDense: true,
                                                   labelText: 'Code postal',
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -732,10 +730,11 @@ class _PreOrderContentComponentWidgetState
                                                     .passwordConfirmFocusNode2,
                                                 autofocus: false,
                                                 autofillHints: [
-                                                  AutofillHints.password
+                                                  AutofillHints.addressState
                                                 ],
                                                 obscureText: false,
                                                 decoration: InputDecoration(
+                                                  isDense: true,
                                                   labelText: 'Pays',
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -862,113 +861,6 @@ class _PreOrderContentComponentWidgetState
                                           ),
                                     ][index]();
                                   },
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  child: TextFormField(
-                                    controller:
-                                        _model.passwordConfirmTextController3,
-                                    focusNode: _model.passwordConfirmFocusNode3,
-                                    autofocus: false,
-                                    autofillHints: [AutofillHints.password],
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Pays',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            font: GoogleFonts.notoSans(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.notoSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                    minLines: 1,
-                                    validator: _model
-                                        .passwordConfirmTextController3Validator
-                                        .asValidator(context),
-                                  ),
                                 ),
                               ),
                               Padding(

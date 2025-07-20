@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'news_letter_dialog_model.dart';
@@ -377,8 +378,18 @@ class _NewsLetterDialogWidgetState extends State<NewsLetterDialogWidget> {
                           child: Padding(
                             padding: EdgeInsets.all(4.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                Navigator.pop(context);
+
+                                context.pushNamed(
+                                  HomePageWidget.routeName,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
                               },
                               text: 'Je m\'inscris',
                               options: FFButtonOptions(

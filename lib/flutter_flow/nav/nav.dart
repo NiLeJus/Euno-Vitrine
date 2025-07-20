@@ -36,42 +36,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
-              builder: (context) => isWeb
-                  ? Container()
-                  : Container(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/android-chrome-192x192.png',
-                          width: 80.0,
-                          height: 80.0,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
+              builder: (context) => Container(
+                color: FlutterFlowTheme.of(context).primaryBackground,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/android-chrome-192x192.png',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
             )
-          : LandingPageWidget(),
+          : HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
-                  builder: (context) => isWeb
-                      ? Container()
-                      : Container(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          child: Center(
-                            child: Image.asset(
-                              'assets/images/android-chrome-192x192.png',
-                              width: 80.0,
-                              height: 80.0,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
+                  builder: (context) => Container(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    child: Center(
+                      child: Image.asset(
+                        'assets/images/android-chrome-192x192.png',
+                        width: 80.0,
+                        height: 80.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
                 )
-              : LandingPageWidget(),
+              : HomePageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -82,11 +78,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ConfirmationWidget.routeName,
           path: ConfirmationWidget.routePath,
           builder: (context, params) => ConfirmationWidget(),
-        ),
-        FFRoute(
-          name: LandingPageWidget.routeName,
-          path: LandingPageWidget.routePath,
-          builder: (context, params) => LandingPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

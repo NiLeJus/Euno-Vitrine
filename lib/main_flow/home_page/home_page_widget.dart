@@ -131,6 +131,108 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         updateCallback: () => safeSetState(() {}),
                         child: ThirdSectionWidget(),
                       ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 32.0, 0.0, 32.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/mundai_principal.png',
+                                      width: 80.0,
+                                      height: 200.0,
+                                      fit: BoxFit.fitWidth,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    constraints: BoxConstraints(
+                                      maxWidth: 350.0,
+                                    ),
+                                    decoration: BoxDecoration(),
+                                    child: Text(
+                                      'Pourquoi choisir Mundaï ?',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            font: GoogleFonts.robotoCondensed(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                  Container(
+                                    constraints: BoxConstraints(
+                                      maxWidth: 350.0,
+                                    ),
+                                    decoration: BoxDecoration(),
+                                    child: Text(
+                                      'Nous ne construisons pas des gadgets, mais des liens. Nos technologies sont conçues pour prendre soin de l’humain, pas pour le remplacer. Avec Euno, nous imaginons un futur plus doux, plus attentif, plus relationnel.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSans(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ].divide(SizedBox(width: 32.0)),
+                          ),
+                        ),
+                      ),
                       wrapWithModel(
                         model: _model.footerComponentModel,
                         updateCallback: () => safeSetState(() {}),
@@ -141,10 +243,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
                 Align(
                   alignment: AlignmentDirectional(0.0, -1.0),
-                  child: wrapWithModel(
-                    model: _model.topBarComponentModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: TopBarComponentWidget(),
+                  child: Container(
+                    height: 150.0,
+                    decoration: BoxDecoration(),
+                    child: wrapWithModel(
+                      model: _model.topBarComponentModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: TopBarComponentWidget(),
+                    ),
                   ),
                 ),
                 Align(
@@ -364,7 +470,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryText,
+                                                              .secondaryText,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
